@@ -1,27 +1,47 @@
 # Project Statement: FinTrack
 
 ## Problem Statement
-Tracking personal investments manually across various asset classes (like stocks, mutual funds, ETFs, and gold) can be a time-consuming and error-prone process. While professional portfolio management software exists, these platforms are often overly complex for average users, require paid subscriptions, or demand that users upload sensitive personal financial data to third-party cloud servers. A simple, localized tool is needed to allow an individual to securely log their financial asset purchases, evaluate their overall portfolio health, track average buy prices, and simulate future goal projections without compromising their data privacy.
+
+Managing personal investments manually can become difficult when a portfolio contains different types of assets such as stocks, mutual funds, ETFs, and gold. Keeping track of transactions, average purchase prices, current values, and overall profit or loss can take time and may lead to mistakes.
+
+**FinTrack** is a command-line application developed to make this process simpler. It allows users to maintain their investment portfolio, record financial transactions, view portfolio performance, analyse basic risk, generate reports, and explore future investment and financial-goal scenarios. The application keeps the portfolio data locally using CSV files.
 
 ## Scope of the Project
-FinTrack is a local, command-line-based (CLI) Java application that provides an isolated environment for tracking a financial portfolio. The project focuses on core investment management, encompassing the logging of transactions (buy/sell/deposit/withdraw), calculating basic financial metrics (current value, invested amount, profit/loss, and return on investment), and evaluating portfolio risk based on predefined concentration rules.
 
-The scope is strictly limited to local operations and flat-file persistence. It does not include:
-- A Graphical User Interface (GUI) or Web Interface.
-- Integration with live stock market APIs or banking gateways.
-- Multi-user authentication or centralized databases (e.g., SQL).
+FinTrack is a Java-based command-line application focused on personal portfolio management and basic financial analysis.
+
+The project covers:
+
+* Managing cash and investment holdings
+* Buying and selling investment assets
+* Recording deposits and withdrawals
+* Tracking quantities and average purchase prices
+* Calculating portfolio value and profit/loss
+* Analysing asset allocation and portfolio concentration
+* Performing rule-based portfolio risk analysis
+* Generating portfolio and transaction reports
+* Simulating future investment growth
+* Planning financial goals
+* Saving and loading data using local CSV files
+
+The project does not include live market data, online banking integration, a web or graphical interface, multi-user authentication, cloud storage, or a centralized database.
 
 ## Target Users
-The target users for FinTrack are:
-- Individual investors or hobbyists who want a simple, privacy-focused way to log their investments manually.
-- Finance students or enthusiasts who wish to simulate compound growth and evaluate basic portfolio concentration rules.
-- Anyone looking for an offline tracker without the overhead of enterprise software.
+
+FinTrack is mainly intended for:
+
+* **Individual investors** who want a simple way to manually track their investments.
+* **Students** who want to apply Java and Object-Oriented Programming concepts to a practical project.
+* **Finance enthusiasts** who want to experiment with basic portfolio analysis and investment simulations.
 
 ## High-Level Features
-- **Portfolio Management**: View the current cash balance and a detailed list of all owned assets (Holdings) including their average purchase price and total quantity.
-- **Transaction Processing**: Record operations such as depositing/withdrawing cash, and buying/selling stocks, mutual funds, ETFs, or gold. The system automatically updates the portfolio and logs the transaction history.
-- **Portfolio Analytics**: Automatically calculate total invested capital, current market value, and the net profit or loss across the entire portfolio.
-- **Risk Analysis**: Analyze the portfolio's asset concentration and equity exposure against predefined rules to assign a risk score (LOW, MODERATE, HIGH).
-- **Simulation and Goal Planning**: Iteratively project compound growth over time using expected return rates, and calculate the required monthly contributions to reach a specific financial goal.
-- **Local Persistence**: Save and load all financial data (holdings, cash balance, transactions) to/from local CSV text files.
-- **Data Exporting**: Generate a formatted text report of the current portfolio status.
+
+* **Portfolio Management:** View holdings, manage cash, and update current asset prices.
+* **Transaction Management:** Record Buy, Sell, Deposit, and Withdraw transactions.
+* **Portfolio Analytics:** View invested amount, current value, profit/loss, return percentage, asset allocation, and portfolio concentration.
+* **Risk Analysis:** Evaluate concentration, equity exposure, diversification, and cash buffer using predefined rules.
+* **Reports:** Generate portfolio summaries, holdings reports, and transaction history.
+* **Investment Simulator:** Estimate future portfolio value using compound-growth calculations.
+* **Financial Goal Planner:** Calculate the monthly contribution required to reach a target amount.
+* **Local Persistence:** Store assets, holdings, portfolio information, and transactions in CSV files.
+* **Validation and Error Handling:** Validate user input and handle common transaction and portfolio-related errors.
