@@ -2,32 +2,32 @@
 
 ## Project Overview
 
-**FinTrack** is a command-line Personal Finance and Investment Portfolio Management System developed in Java. It helps users manage investment holdings, record transactions, analyse portfolio performance, assess portfolio risk, generate reports, simulate future investments, and plan financial goals.
+**FinTrack** is a command-line based Personal Finance and Investment Portfolio Management System made using Java. It can be used to manage investment holdings, record transactions, check portfolio performance, analyse risk, generate reports, simulate future investments, and plan financial goals.
 
-The project was developed as a college project to demonstrate core Java and Object-Oriented Programming concepts including encapsulation, inheritance, abstraction, polymorphism, collections, exception handling, enumerations, file handling, and modular software design.
+The project was developed as a college project to apply Java and Object-Oriented Programming concepts in a practical application. It uses concepts such as encapsulation, inheritance, abstraction, polymorphism, collections, exception handling, enums, file handling, and modular programming.
 
 ## Features
 
-* **Portfolio Management** — Manage cash, holdings, and current asset prices.
-* **Transaction Management** — Perform Buy, Sell, Deposit, and Withdraw operations.
-* **Portfolio Analytics** — Calculate invested amount, current value, realised/unrealised P&L, return percentage, asset allocation, and concentration.
-* **Risk Analysis** — Evaluate concentration, equity exposure, diversification, and cash buffer using rule-based scoring.
-* **Reports** — Generate portfolio summaries, holdings reports, and transaction history, with report export support.
+* **Portfolio Management** — Add cash, view holdings, and update current asset prices.
+* **Transaction Management** — Perform Buy, Sell, Deposit, and Withdraw transactions.
+* **Portfolio Analytics** — View invested amount, current value, realised and unrealised P/L, return percentage, asset allocation, and portfolio concentration.
+* **Risk Analysis** — Analyse concentration, equity exposure, diversification, and cash buffer using rule-based scoring.
+* **Reports** — Generate portfolio summaries, holdings reports, and transaction history, with export support.
 * **Investment Simulator** — Estimate future investment value using monthly compound-growth calculations.
-* **Financial Goal Planner** — Calculate the required monthly contribution to reach a target financial goal.
-* **Data Management** — Save portfolio data and load demonstration/sample data.
-* **CSV Persistence** — Store assets, holdings, portfolio information, and transactions locally.
-* **Validation & Exception Handling** — Validate user input and handle invalid transactions and portfolio-related errors.
-* **Automated Testing** — JUnit 5 tests cover important services and application workflows.
+* **Financial Goal Planner** — Calculate the monthly contribution required to reach a target amount.
+* **Data Management** — Save portfolio information and load demonstration/sample data.
+* **CSV Persistence** — Store assets, holdings, portfolio details, and transactions in local CSV files.
+* **Validation & Exception Handling** — Validate inputs and handle invalid transactions and other portfolio-related errors.
+* **Automated Testing** — Includes JUnit 5 tests for important services and application workflows.
 
-## Technologies
+## Technologies Used
 
-| Technology            | Usage                                          |
+| Technology            | Purpose                                        |
 | --------------------- | ---------------------------------------------- |
-| Java 17               | Application development                        |
-| Maven                 | Build and dependency management                |
+| Java 17               | Main programming language                      |
+| Maven                 | Project build and dependency management        |
 | JUnit 5               | Automated testing                              |
-| CSV Files             | Local data persistence                         |
+| CSV Files             | Local data storage                             |
 | Git & GitHub          | Version control                                |
 | Java Standard Library | Collections, file handling, `BigDecimal`, etc. |
 
@@ -44,10 +44,10 @@ FinTrack/
 │   │   ├── cli/                # Command-line menus
 │   │   ├── enums/              # Application enums
 │   │   ├── exception/          # Custom exceptions
-│   │   ├── model/              # Portfolio and asset models
+│   │   ├── model/              # Portfolio and asset classes
 │   │   ├── repository/         # Data persistence
-│   │   ├── service/            # Business logic
-│   │   └── util/               # Validation, formatting, utilities
+│   │   ├── service/            # Main application logic
+│   │   └── util/               # Validation and utility classes
 │   └── test/java/com/fintrack/ # JUnit tests
 ├── README.md
 ├── statement.md
@@ -58,7 +58,7 @@ FinTrack/
 
 ## Main Application Modules
 
-The application provides the following main menu modules:
+The main menu provides access to:
 
 1. Portfolio Management
 2. Transaction Management
@@ -70,11 +70,11 @@ The application provides the following main menu modules:
 8. Data Management
 9. Exit
 
-The application follows a layered structure with **CLI menus, services, models, repository/persistence, utilities, and custom exceptions**. This keeps user interaction separate from business logic and data handling.
+The project is divided into menus, services, models, repository/persistence, utilities, and custom exceptions. This keeps the user interface, application logic, and data handling separated from each other.
 
 ## Financial Calculations
 
-FinTrack uses `BigDecimal` for important monetary calculations.
+FinTrack uses Java's `BigDecimal` for important monetary calculations.
 
 **Invested Amount**
 
@@ -94,32 +94,28 @@ Current Value = Quantity × Current Market Price
 Total P/L = Realised P/L + Unrealised P/L
 ```
 
-Realised profit/loss is calculated when units are sold using the holding's running average cost basis. Unrealised profit/loss is based on the difference between the current market value and the applicable cost basis.
+Realised P/L is calculated when units are sold using the holding's running average cost basis. Unrealised P/L is based on the current market value compared with the applicable cost basis.
 
-Portfolio return is calculated using total profit/loss relative to the relevant active invested amount.
+Portfolio return is calculated using the total profit/loss relative to the relevant active invested amount.
 
 ## Risk Analysis
 
-The risk analysis module uses a rule-based scoring system based on portfolio characteristics:
+The risk module uses a simple rule-based scoring system. It considers:
 
-* Concentration above 25% in one asset adds risk.
-* Concentration above 50% adds additional risk.
-* Equity exposure above 50% adds risk.
-* Equity exposure above 80% adds additional risk.
-* Holding fewer than three different assets adds a diversification risk point.
-* A cash buffer below 5% of total portfolio value adds a risk point.
+* Concentration above 25% in one asset
+* Concentration above 50% in one asset
+* Equity exposure above 50%
+* Equity exposure above 80%
+* Fewer than three different assets
+* Cash buffer below 5% of total portfolio value
 
-The resulting score is classified as:
+The final score is classified as **LOW**, **MODERATE**, or **HIGH** risk.
 
-* **LOW**
-* **MODERATE**
-* **HIGH**
-
-These rules are simplified for educational purposes and are not intended to represent professional investment advice.
+These rules are designed for demonstrating portfolio analysis in the project and are not intended to be a professional investment risk assessment.
 
 ## Data Persistence
 
-Portfolio information is stored locally in CSV files:
+Portfolio information is stored locally using CSV files:
 
 ```text
 portfolio-data/
@@ -129,16 +125,16 @@ portfolio-data/
 └── transactions.csv
 ```
 
-This demonstrates file-based persistence without requiring an external database.
+This provides simple file-based persistence without requiring an external database.
 
 ## Setup
 
 1. Install **JDK 17 or higher**.
 2. Clone the repository.
 3. Open a terminal in the project directory.
-4. Use the included Maven Wrapper.
+4. Use the included Maven Wrapper to build, test, and run the project.
 
-### Run Tests
+### Running Tests
 
 **Windows**
 
@@ -152,7 +148,7 @@ This demonstrates file-based persistence without requiring an external database.
 ./mvnw clean test
 ```
 
-### Run Application
+### Running the Application
 
 **Windows**
 
@@ -170,9 +166,9 @@ This demonstrates file-based persistence without requiring an external database.
 
 ## Testing
 
-The project includes JUnit 5 tests for transaction processing, portfolio analytics, risk analysis, and system-level workflows.
+JUnit 5 tests are included for transaction processing, portfolio analytics, risk analysis, and system-level workflows.
 
-Current test result:
+The current test suite contains **15 tests**, all passing successfully:
 
 ```text
 Tests run: 15
@@ -184,7 +180,7 @@ BUILD SUCCESS
 
 ## Documentation
 
-Additional project documentation is available in `project-documentation/`, including:
+The `project-documentation/` folder contains the supporting project documentation, including:
 
 * VITyarthi requirements checklist
 * System architecture diagram
