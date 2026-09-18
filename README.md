@@ -10,11 +10,11 @@ I developed this project as a college Java project to apply the concepts we lear
 
 ## Features
 
-* **Portfolio Management** — Add cash, view holdings, and update the current price of assets.
+* **Portfolio Management** — View portfolio information, manage holdings, and update the current price of assets.
 * **Transaction Management** — Perform Buy, Sell, Deposit, and Withdraw transactions.
 * **Portfolio Analytics** — Check invested amount, current value, realised and unrealised profit/loss, return percentage, asset allocation, and portfolio concentration.
 * **Risk Analysis** — Check concentration, equity exposure, diversification, and cash buffer using a rule-based scoring system.
-* **Reports** — Generate portfolio summaries, holdings reports, and transaction history, including export support.
+* **Reports** — Generate portfolio summaries, holdings reports, and transaction history.
 * **Investment Simulator** — Estimate how an investment can grow over time using monthly compound-growth calculations.
 * **Financial Goal Planner** — Calculate the monthly amount required to reach a particular financial target.
 * **Data Management** — Save portfolio information and load demonstration/sample data.
