@@ -192,6 +192,15 @@ The `project-documentation/` folder contains the supporting project documentatio
 
 The detailed project report is maintained separately as the official submission document.
 
+## Example Portfolio Result
+
+Invested Amount : ₹35,000
+Realized P/L    : ₹1,000
+Unrealized P/L  : ₹0
+Total P/L       : ₹1,000
+Return          : 2.86%
+Risk Level      : MODERATE
+
 ## Disclaimer
 
 FinTrack is an educational software project. Its calculations, simulations, and risk classifications are simplified for demonstration purposes and do not constitute financial, investment, tax, or professional advice.
